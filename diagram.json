@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "author": "ShadowNet",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-pi-pico-w",
+      "id": "pico",
+      "top": -12.85,
+      "left": -351.65,
+      "attrs": { "env": "micropython-20231005-v1.21.0" }
+    },
+    { "type": "chip-sx1278", "id": "chip1", "top": -60, "left": -72, "attrs": {} },
+    { "type": "chip-sx1278", "id": "chip2", "top": 200, "left": -72, "attrs": {} }
+  ],
+  "connections": [
+    [ "pico:3V3", "chip1:VCC", "red", [] ],
+    [ "pico:3V3", "chip2:VCC", "red", [] ],
+    [ "pico:GND.1", "chip1:GND", "black", [] ],
+    [ "pico:GND.2", "chip2:GND", "black", [] ],
+
+    [ "pico:GP13", "chip1:NSS", "green", [] ],
+    [ "pico:GP14", "chip1:SCK", "green", [] ],
+    [ "pico:GP15", "chip1:MOSI", "green", [] ],
+    [ "pico:GP12", "chip1:MISO", "green", [] ],
+    [ "pico:GP16", "chip1:DIO0", "green", [] ],
+
+    [ "pico:GP5", "chip2:NSS", "blue", [] ],
+    [ "pico:GP6", "chip2:SCK", "blue", [] ],
+    [ "pico:GP7", "chip2:MOSI", "blue", [] ],
+    [ "pico:GP4", "chip2:MISO", "blue", [] ],
+    [ "pico:GP9", "chip2:DIO0", "blue", [] ],
+
+    [ "chip1:AIR_TX", "chip2:AIR_RX", "orange", [] ],
+    [ "chip2:AIR_TX", "chip1:AIR_RX", "orange", [] ]
+  ],
+  "dependencies": {}
+}

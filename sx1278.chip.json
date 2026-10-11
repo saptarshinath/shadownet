@@ -1,0 +1,17 @@
+{
+  "name": "LoRa SX1278",
+  "author": "",
+  "pins": [
+    "NSS",
+    "DIO0",
+    "DIO1",
+    "SCK",
+    "MOSI",
+    "MISO",
+    "GND",
+    "VCC",
+    "AIR_TX",
+    "AIR_RX"
+  ],
+  "controls": []
+}
